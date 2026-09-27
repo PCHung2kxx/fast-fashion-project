@@ -1,0 +1,1386 @@
+
+/* ================================
+   1. CÀI ĐẶT CHUNG
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f1e8;
+    color: #26352b;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   2. TRANG CHỦ - INDEX
+================================ */
+
+.hero {
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("images/anh-mo-ta.png");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+}
+
+.hero .content {
+    max-width: 900px;
+    padding: 30px;
+}
+
+.subtitle {
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 100px);
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.description {
+    max-width: 650px;
+    margin: 0 auto 40px;
+
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   3. MENU / BUTTON
+================================ */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.menu a,
+.page-navigation a {
+    color: inherit;
+    text-decoration: none;
+
+    padding: 12px 24px;
+
+    border: 1px solid currentColor;
+    border-radius: 30px;
+
+    transition: 0.3s ease;
+}
+
+.hero .menu a {
+    color: white;
+}
+
+.menu a:hover,
+.page-navigation a:hover {
+    background-color: #a4c3a2;
+    color: white;
+}
+
+
+/* ================================
+   4. CÁC TRANG NỘI DUNG
+================================ */
+
+.page {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    padding: 70px 0;
+}
+
+/* Background cho các trang nội dung */
+body:has(.page) {
+    background-image:
+        linear-gradient(
+            rgba(244, 241, 232, 0.88),
+            rgba(244, 241, 232, 0.88)
+        ),
+        url("images/fashion-background.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+/* Header của trang */
+
+.page-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.page-header .subtitle {
+    color: #617762;
+}
+
+.page-header h1 {
+    font-size: clamp(45px, 7vw, 85px);
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+}
+
+.intro {
+    max-width: 750px;
+    margin: 0 auto;
+
+    font-size: 19px;
+    color: #526056;
+}
+
+
+/* ================================
+   5. SECTION
+================================ */
+
+.content-section {
+    max-width: 900px;
+    margin: 0 auto 70px;
+}
+
+.content-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+
+    color: #314b37;
+}
+
+.content-section p {
+    margin-bottom: 18px;
+}
+
+
+/* ================================
+   6. CARD
+================================ */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.card {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    margin-bottom: 12px;
+
+    color: #3f6046;
+}
+
+
+/* ================================
+   7. SECTION NHẤN MẠNH
+================================ */
+
+.highlight {
+    background-color: #dfe8dc;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    border-left: 6px solid #617762;
+}
+
+
+/* ================================
+   8. ĐIỀU HƯỚNG CUỐI TRANG
+================================ */
+
+.page-navigation {
+    display: flex;
+
+    justify-content: space-between;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* ================================
+   9. RESPONSIVE
+   Cho màn hình nhỏ
+================================ */
+
+@media (max-width: 768px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .page {
+        width: 88%;
+        padding: 45px 0;
+    }
+
+    .page-header {
+        margin-bottom: 50px;
+    }
+
+    .content-section {
+        margin-bottom: 50px;
+    }
+
+    .page-navigation {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+}
+
+/* =========================================
+   TRANG NỘI DUNG - TIMELINE
+   ========================================= */
+
+.content-page {
+    background-color: #f4f1e8;
+}
+
+
+/* TIMELINE */
+
+.fashion-timeline {
+    max-width: 1000px;
+    margin: 0 auto 35px;
+
+    display: grid;
+    grid-template-columns: 280px 1fr;
+
+    background-color: white;
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+/* DANH SÁCH GIAI ĐOẠN */
+
+.timeline-list {
+    background-color: #314b37;
+
+    padding: 25px;
+}
+
+
+.timeline-item {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 20px 15px;
+
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    background: transparent;
+
+    color: #dfe8dc;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.timeline-item span {
+    font-size: 13px;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+
+.timeline-item strong {
+    font-size: 16px;
+}
+
+
+.timeline-item:hover {
+    padding-left: 22px;
+    color: white;
+}
+
+
+/* ITEM ĐANG CHỌN */
+
+.timeline-item.active {
+    background-color: #617762;
+    color: white;
+
+    border-radius: 10px;
+}
+
+
+.timeline-item.active span {
+    opacity: 1;
+}
+
+
+/* NỘI DUNG */
+
+.timeline-content {
+    padding: 60px;
+
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.timeline-label {
+    font-size: 13px;
+    letter-spacing: 4px;
+
+    color: #617762;
+
+    margin-bottom: 12px;
+}
+
+
+.timeline-content h2 {
+    font-size: 42px;
+
+    color: #314b37;
+
+    margin-bottom: 20px;
+}
+
+
+#step-description {
+    max-width: 600px;
+
+    font-size: 17px;
+
+    color: #526056;
+
+    line-height: 1.8;
+}
+
+
+/* BOX TÁC ĐỘNG */
+
+.impact-box {
+    margin-top: 35px;
+
+    padding: 20px 25px;
+
+    background-color: #eef3eb;
+
+    border-left: 5px solid #617762;
+
+    border-radius: 8px;
+}
+
+
+.impact-box p {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    color: #617762;
+
+    margin-bottom: 5px;
+}
+
+
+.impact-box h3 {
+    color: #314b37;
+}
+
+
+/* THANH TIẾN TRÌNH */
+
+.progress-wrapper {
+    max-width: 1000px;
+
+    margin: 0 auto 80px;
+}
+
+
+.progress-track {
+    width: 100%;
+
+    height: 4px;
+
+    background-color: #d5ddd0;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.progress-bar {
+    width: 20%;
+
+    height: 100%;
+
+    background-color: #617762;
+
+    transition: width 0.4s ease;
+}
+
+
+/* SUMMARY */
+
+.content-summary {
+    max-width: 900px;
+
+    margin: 20px auto 80px;
+
+    padding: 45px;
+
+    background-color: #dfe8dc;
+
+    border-radius: 20px;
+
+    border-left: 6px solid #617762;
+}
+
+
+.content-summary h2 {
+    font-size: 32px;
+
+    color: #314b37;
+
+    margin-bottom: 20px;
+}
+
+
+.content-summary p:not(.topic-label) {
+    margin-bottom: 15px;
+}
+
+
+/* ANIMATION */
+
+.timeline-content.change {
+    animation: contentFade 0.35s ease;
+}
+
+
+@keyframes contentFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .fashion-timeline {
+        grid-template-columns: 1fr;
+    }
+
+
+    .timeline-list {
+        display: grid;
+
+        grid-template-columns: repeat(5, 1fr);
+
+        gap: 5px;
+
+        padding: 10px;
+    }
+
+
+    .timeline-item {
+        justify-content: center;
+
+        padding: 15px 5px;
+
+        border: none;
+
+        flex-direction: column;
+
+        gap: 5px;
+
+        text-align: center;
+    }
+
+
+    .timeline-item:hover {
+        padding-left: 5px;
+    }
+
+
+    .timeline-item strong {
+        font-size: 12px;
+    }
+
+
+    .timeline-content {
+        padding: 40px 25px;
+
+        min-height: 350px;
+    }
+
+
+    .timeline-content h2 {
+        font-size: 32px;
+    }
+
+
+    .content-summary {
+        padding: 30px;
+    }
+
+}
+
+/* =========================================
+   P3 - GIẢI PHÁP
+   ========================================= */
+
+.solution-page {
+    background-color: #f4f1e8;
+}
+
+
+/* 3 TAB */
+
+.solution-tabs {
+    max-width: 1000px;
+    margin: 0 auto 25px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+.solution-tab {
+    min-height: 110px;
+
+    padding: 20px 25px;
+
+    border: none;
+    border-radius: 14px;
+
+    background-color: #e1e6dd;
+    color: #526056;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    transition: 0.3s ease;
+}
+
+.solution-tab span {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #879687;
+}
+
+.solution-tab strong {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.solution-tab:hover {
+    background-color: #d5ddd0;
+    transform: translateY(-3px);
+}
+
+.solution-tab.active {
+    background-color: #314b37;
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.solution-tab.active span {
+    color: #cbd8c8;
+}
+
+
+/* =========================================
+   KHU VỰC GALLERY + THÔNG TIN
+   ========================================= */
+
+.solution-display {
+    max-width: 1000px;
+
+    margin: 0 auto 80px;
+
+    background-color: white;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 45% 55%;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   GALLERY
+   ========================================= */
+
+.solution-gallery {
+    padding: 25px;
+
+    background-color: #dfe8dc;
+
+    position: relative;
+}
+
+
+/* ẢNH CHÍNH */
+
+.main-image {
+    height: 480px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+
+    border: 2px dashed #8fa18d;
+
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #718071;
+
+    transition: 0.3s ease;
+}
+
+.image-placeholder span {
+    font-size: 13px;
+    letter-spacing: 4px;
+
+    margin-bottom: 10px;
+}
+
+.image-placeholder p {
+    font-size: 15px;
+}
+
+
+/* SAU NÀY KHI CÓ ẢNH */
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    display: block;
+}
+
+
+/* NÚT TRÁI PHẢI */
+
+.gallery-button {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: rgba(49, 75, 55, 0.85);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.gallery-button:hover {
+    background-color: #314b37;
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+.gallery-prev {
+    left: 15px;
+}
+
+.gallery-next {
+    right: 15px;
+}
+
+
+/* =========================================
+   THUMBNAILS
+   ========================================= */
+
+.gallery-thumbnails {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.thumbnail {
+    height: 80px;
+
+    padding: 0;
+
+    border: 3px solid transparent;
+
+    border-radius: 10px;
+
+    background: none;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: translateY(-2px);
+}
+
+.thumbnail.active {
+    border-color: #314b37;
+}
+
+
+/* PLACEHOLDER THUMBNAIL */
+
+.thumbnail-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #cbd8c8;
+
+    color: #526056;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+/* SAU NÀY THAY BẰNG ẢNH */
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* COUNTER */
+
+.gallery-counter {
+    margin-top: 10px;
+
+    text-align: right;
+
+    font-size: 12px;
+
+    color: #718071;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   THÔNG TIN GIẢI PHÁP
+   ========================================= */
+
+.solution-info {
+    padding: 55px 50px;
+}
+
+.solution-number {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #617762;
+
+    margin-bottom: 12px;
+}
+
+.solution-info h2 {
+    font-size: 42px;
+
+    line-height: 1.15;
+
+    color: #314b37;
+
+    margin-bottom: 5px;
+}
+
+.solution-subtitle {
+    font-size: 18px;
+
+    font-style: italic;
+
+    color: #879687;
+
+    margin-bottom: 25px;
+}
+
+#solution-description {
+    color: #526056;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   HIGHLIGHTS
+   ========================================= */
+
+.solution-highlights {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.highlight-item {
+    display: grid;
+
+    grid-template-columns: 35px 1fr;
+
+    gap: 15px;
+
+    padding-bottom: 18px;
+
+    border-bottom:
+        1px solid #e1e6dd;
+}
+
+.highlight-item:last-child {
+    border-bottom: none;
+
+    padding-bottom: 0;
+}
+
+.highlight-item > span {
+    font-size: 12px;
+
+    color: #879687;
+
+    padding-top: 3px;
+}
+
+.highlight-item h3 {
+    font-size: 17px;
+
+    color: #3f6046;
+
+    margin-bottom: 4px;
+}
+
+.highlight-item p {
+    font-size: 14px;
+
+    color: #68766b;
+}
+
+
+/* =========================================
+   CHI TIẾT
+   ========================================= */
+
+.solution-detail {
+    max-width: 1000px;
+
+    margin: 0 auto 80px;
+}
+
+.detail-header {
+    margin-bottom: 30px;
+}
+
+.detail-header h2 {
+    font-size: 32px;
+
+    color: #314b37;
+}
+
+.detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.detail-card {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+}
+
+.detail-card > span {
+    display: block;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #879687;
+
+    margin-bottom: 18px;
+}
+
+.detail-card h3 {
+    font-size: 18px;
+
+    color: #3f6046;
+
+    margin-bottom: 12px;
+}
+
+.detail-card p {
+    font-size: 14px;
+
+    color: #68766b;
+}
+
+
+/* =========================================
+   SUMMARY
+   ========================================= */
+
+.solution-summary {
+    max-width: 900px;
+
+    margin: 0 auto 80px;
+
+    padding: 50px;
+
+    background-color: #dfe8dc;
+
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+.solution-summary h2 {
+    max-width: 700px;
+
+    margin: 0 auto 20px;
+
+    font-size: 32px;
+
+    color: #314b37;
+}
+
+.solution-summary p:not(.topic-label) {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #526056;
+}
+
+
+/* =========================================
+   ANIMATION
+   ========================================= */
+
+.solution-display.change {
+    animation:
+        solutionChange 0.4s ease;
+}
+
+@keyframes solutionChange {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .solution-tabs {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+
+    .solution-tab {
+        min-height: auto;
+
+        padding: 15px 20px;
+    }
+
+
+    .solution-display {
+        grid-template-columns: 1fr;
+    }
+
+
+    .solution-gallery {
+        padding: 20px;
+    }
+
+
+    .main-image {
+        height: 350px;
+    }
+
+
+    .thumbnail {
+        height: 65px;
+    }
+
+
+    .solution-info {
+        padding: 40px 25px;
+    }
+
+
+    .solution-info h2 {
+        font-size: 34px;
+    }
+
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .solution-summary {
+        padding: 35px 25px;
+    }
+
+
+    .solution-summary h2 {
+        font-size: 27px;
+    }
+
+}
+
+/* =========================
+   ABOUT US
+   ========================= */
+
+.about-page {
+    background-color: #f4f1e8;
+}
+
+.about-home {
+    margin-bottom: 40px;
+}
+
+.about-home a {
+    color: #314b37;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.about-home a:hover {
+    color: #617762;
+    padding-left: 5px;
+}
+
+.about-header {
+    margin-bottom: 60px;
+}
+
+/* Team */
+
+.team-grid {
+    max-width: 1000px;
+    margin: 0 auto 80px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.team-card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-7px);
+}
+
+/* Ảnh thành viên */
+
+.member-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #dfe8dc;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .member-image img {
+    transform: scale(1.04);
+}
+
+/* Tên + mô tả */
+
+.member-info {
+    padding: 25px 28px 30px;
+}
+
+.member-info h2 {
+    font-size: 24px;
+    color: #314b37;
+    margin-bottom: 8px;
+}
+
+.member-info p {
+    font-size: 14px;
+    color: #68766b;
+}
+
+/* Lời kết */
+
+.about-message {
+    max-width: 900px;
+    margin: 0 auto 80px;
+
+    padding: 50px;
+
+    background-color: #dfe8dc;
+
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+.about-message h2 {
+    max-width: 650px;
+
+    margin: 0 auto 15px;
+
+    font-size: 32px;
+
+    color: #314b37;
+}
+
+.about-message p:not(.topic-label) {
+    color: #526056;
+}
+
+/* Nút ABOUT US ở trang chủ */
+
+.about-button {
+    position: absolute;
+
+    top: 30px;
+    right: 35px;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    border-radius: 25px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s ease;
+}
+
+.about-button:hover {
+    background-color: white;
+    color: #314b37;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .about-button {
+        top: 20px;
+        right: 20px;
+
+        font-size: 11px;
+
+        padding: 8px 14px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .member-image {
+        height: 350px;
+    }
+
+    .about-message {
+        padding: 35px 25px;
+    }
+
+    .about-message h2 {
+        font-size: 27px;
+    }
+}
